@@ -104,7 +104,7 @@ eval("\n\n/* eslint-disable */\n\n/**\n * @param {string[]} pathComponents\n * @
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      (function() {\n        var localsJsonString = undefined;\n        // 1731083113075\n        var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {});\n        // only invalidate when locals change\n        if (\n          module.hot.data &&\n          module.hot.data.value &&\n          module.hot.data.value !== localsJsonString\n        ) {\n          module.hot.invalidate();\n        } else {\n          module.hot.accept();\n        }\n        module.hot.dispose(function(data) {\n          data.value = localsJsonString;\n          cssReload();\n        });\n      })();\n    }\n  \n\n//# sourceURL=webpack:///./src/pages/login/index.css?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      (function() {\n        var localsJsonString = undefined;\n        // 1731083698080\n        var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {});\n        // only invalidate when locals change\n        if (\n          module.hot.data &&\n          module.hot.data.value &&\n          module.hot.data.value !== localsJsonString\n        ) {\n          module.hot.invalidate();\n        } else {\n          module.hot.accept();\n        }\n        module.hot.dispose(function(data) {\n          data.value = localsJsonString;\n          cssReload();\n        });\n      })();\n    }\n  \n\n//# sourceURL=webpack:///./src/pages/login/index.css?");
 
 /***/ }),
 
@@ -351,7 +351,7 @@ eval("/** @typedef {\"info\" | \"warning\" | \"error\"} LogLevel */\n\n/** @type
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/pages/login/index.css\");\n\n\ndocument.getElementById('loginForm').addEventListener('submit', function (e) {\n    e.preventDefault(); // Prevent the default form submission\n\n    // Get the values from the input fields\n    const email = document.getElementById('email').value;\n    const password = document.getElementById('password').value;\n\n    // Send a POST request to the API\n    fetch('http://localhost:4000/auth', {\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        email: email,\n        password: password,\n      }),\n    })\n    .then((response) => {\n      if (!response.ok) {\n        throw new Error('Network response was not ok ' + response.statusText);\n      }\n      return response.json();\n    })\n    .then((data) => {\n        window.location.href = '../dashboard';\n        console.log('Success:', data); // Handle success response\n      // Optionally redirect or update the UI based on the response\n    })\n    .catch((error) => {\n      console.error('Error:', error); // Handle any errors\n    });\n  });\n\n//# sourceURL=webpack:///./src/pages/login/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/pages/login/index.css\");\n\n\ndocument.getElementById('loginForm').addEventListener('submit', function (e) {\n    e.preventDefault(); // Prevent the default form submission\n\n    // Get the values from the input fields\n    const email = document.getElementById('email').value;\n    const password = document.getElementById('password').value;\n\n    // Send a POST request to the API\n    fetch('https://node-api-atjf.onrender.com/auth', {\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        email: email,\n        password: password,\n      }),\n    })\n    .then((response) => {\n      if (!response.ok) {\n        throw new Error('Network response was not ok ' + response.statusText);\n      }\n      return response.json();\n    })\n    .then((data) => {\n        window.location.href = '../dashboard';\n        console.log('Success:', data); // Handle success response\n      // Optionally redirect or update the UI based on the response\n    })\n    .catch((error) => {\n      console.error('Error:', error); // Handle any errors\n    });\n  });\n\n//# sourceURL=webpack:///./src/pages/login/index.js?");
 
 /***/ })
 
@@ -443,7 +443,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("3123c00709edb578")
+/******/ 		__webpack_require__.h = () => ("d0109a33264d7610")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

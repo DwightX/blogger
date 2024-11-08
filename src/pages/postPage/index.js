@@ -6,7 +6,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 async function fetchBlogPosts(postID) {
     try {
-        const response = await fetch(`http://localhost:4000/post/${postID}`, {
+        const response = await fetch(`https://node-api-atjf.onrender.com/post/${postID}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

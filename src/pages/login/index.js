@@ -8,7 +8,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     const password = document.getElementById('password').value;
 
     // Send a POST request to the API
-    fetch('http://localhost:4000/auth', {
+    fetch('https://node-api-atjf.onrender.com/auth', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
