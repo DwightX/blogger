@@ -9,6 +9,7 @@ async function fetchBlogPosts() {
         const response = await fetch('https://node-api-atjf.onrender.com/post', {
             method: 'GET',
             headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('authToken'),
                 'Content-Type': 'application/json',
             },
         });
