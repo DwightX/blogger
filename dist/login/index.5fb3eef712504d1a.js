@@ -97,25 +97,14 @@ eval("\n\n/* eslint-disable */\n\n/**\n * @param {string[]} pathComponents\n * @
 
 /***/ }),
 
-/***/ "./node_modules/bootstrap-icons/font/bootstrap-icons.css":
-/*!***************************************************************!*\
-  !*** ./node_modules/bootstrap-icons/font/bootstrap-icons.css ***!
-  \***************************************************************/
+/***/ "./src/pages/login/index.css":
+/*!***********************************!*\
+  !*** ./src/pages/login/index.css ***!
+  \***********************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      (function() {\n        var localsJsonString = undefined;\n        // 1731083113080\n        var cssReload = __webpack_require__(/*! ../../mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {});\n        // only invalidate when locals change\n        if (\n          module.hot.data &&\n          module.hot.data.value &&\n          module.hot.data.value !== localsJsonString\n        ) {\n          module.hot.invalidate();\n        } else {\n          module.hot.accept();\n        }\n        module.hot.dispose(function(data) {\n          data.value = localsJsonString;\n          cssReload();\n        });\n      })();\n    }\n  \n\n//# sourceURL=webpack:///./node_modules/bootstrap-icons/font/bootstrap-icons.css?");
-
-/***/ }),
-
-/***/ "./src/pages/postList/index.css":
-/*!**************************************!*\
-  !*** ./src/pages/postList/index.css ***!
-  \**************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      (function() {\n        var localsJsonString = undefined;\n        // 1731085061741\n        var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {});\n        // only invalidate when locals change\n        if (\n          module.hot.data &&\n          module.hot.data.value &&\n          module.hot.data.value !== localsJsonString\n        ) {\n          module.hot.invalidate();\n        } else {\n          module.hot.accept();\n        }\n        module.hot.dispose(function(data) {\n          data.value = localsJsonString;\n          cssReload();\n        });\n      })();\n    }\n  \n\n//# sourceURL=webpack:///./src/pages/postList/index.css?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      (function() {\n        var localsJsonString = undefined;\n        // 1731085245140\n        var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {});\n        // only invalidate when locals change\n        if (\n          module.hot.data &&\n          module.hot.data.value &&\n          module.hot.data.value !== localsJsonString\n        ) {\n          module.hot.invalidate();\n        } else {\n          module.hot.accept();\n        }\n        module.hot.dispose(function(data) {\n          data.value = localsJsonString;\n          cssReload();\n        });\n      })();\n    }\n  \n\n//# sourceURL=webpack:///./src/pages/login/index.css?");
 
 /***/ }),
 
@@ -355,14 +344,14 @@ eval("/** @typedef {\"info\" | \"warning\" | \"error\"} LogLevel */\n\n/** @type
 
 /***/ }),
 
-/***/ "./src/pages/postList/index.js":
-/*!*************************************!*\
-  !*** ./src/pages/postList/index.js ***!
-  \*************************************/
+/***/ "./src/pages/login/index.js":
+/*!**********************************!*\
+  !*** ./src/pages/login/index.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/pages/postList/index.css\");\n/* harmony import */ var bootstrap_icons_font_bootstrap_icons_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap-icons/font/bootstrap-icons.css */ \"./node_modules/bootstrap-icons/font/bootstrap-icons.css\");\n\n\n\nconst submitPost = document.getElementById(\"submit\");\n\nasync function fetchBlogPosts() {\n    try {\n        const response = await fetch('https://node-api-atjf.onrender.com/post', {\n            method: 'GET',\n            headers: {\n                'Content-Type': 'application/json',\n            },\n        });\n\n        if (!response.ok) {\n            throw new Error('Network response was not ok ' + response.statusText);\n        }\n\n        const blogPosts = await response.json();\n        const blogPostSection = document.getElementById(\"blog-post-section\");\n        \n        // Clear existing posts to prevent duplicates\n        blogPostSection.innerHTML = '';\n\n        blogPosts.forEach(post => {\n            // Create main container with card styling\n            const blogPostContainer = document.createElement(\"div\");\n            blogPostContainer.className = \"ml-6 mb-6 w-full max-w-2xl rounded-lg border bg-white shadow-sm\";\n        \n            // Create card header\n            const cardHeader = document.createElement(\"div\");\n            cardHeader.className = \"p-6\";\n        \n            // Create header content wrapper\n            const headerContent = document.createElement(\"div\");\n            headerContent.className = \"flex items-center justify-between\";\n        \n            // Create and style title\n            const blogPostTitle = document.createElement(\"h2\");\n            blogPostTitle.className = \"text-2xl font-bold text-gray-900\";\n            blogPostTitle.innerHTML = post.title;\n        \n            // Create date wrapper\n            const dateWrapper = document.createElement(\"div\");\n            dateWrapper.className = \"flex items-center space-x-2 text-gray-500\";\n        \n            // Create calendar icon (using a simple ◷ character as placeholder)\n            const calendarIcon = document.createElement(\"span\");\n            calendarIcon.innerHTML = \"◷\";\n            calendarIcon.className = \"h-4 w-4\";\n        \n            // Create and style date\n            const blogPostDate = document.createElement(\"span\");\n            blogPostDate.className = \"text-sm\";\n            blogPostDate.innerHTML = post.date;\n        \n            // Create card content\n            const cardContent = document.createElement(\"div\");\n            cardContent.className = \"px-6 pb-4\";\n        \n            // Create and style body text\n            const blogPostBody = document.createElement(\"p\");\n            blogPostBody.className = \"text-gray-600\";\n            blogPostBody.innerHTML = post.body;\n        \n            // Create card footer\n            const cardFooter = document.createElement(\"div\");\n            cardFooter.className = \"flex justify-end space-x-2 px-6 pb-6\";\n        \n            // Create and style edit link\n            const editLink = document.createElement(\"a\");\n            editLink.className = \"px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\";\n            editLink.innerHTML = \"View\";\n            editLink.href = `../postPage`; // Adjust as needed\n            editLink.setAttribute(\"data-post-id\", post._id); // Set data attribute with post._id\n\n            // Add event listener for view link\n            editLink.addEventListener(\"click\", (event) => {\n                event.preventDefault(); // Prevent default anchor behavior\n                viewPost(post._id); // Call viewPost with the post ID\n            });\n        \n            // Assemble the card structure\n            dateWrapper.append(calendarIcon, blogPostDate);\n            headerContent.append(blogPostTitle, dateWrapper);\n            cardHeader.append(headerContent);\n            cardContent.append(blogPostBody);\n            cardFooter.append(editLink);\n        \n            // Assemble the main container\n            blogPostContainer.append(cardHeader, cardContent, cardFooter);\n        \n            // Add to the blog section\n            blogPostSection.append(blogPostContainer);\n        });\n    } catch (error) {\n        console.error('Error:', error);\n    }\n}\n\nasync function viewPost(postID) {\n    try {\n        // Redirect to the post page with the post ID in the URL\n        window.location.href = `../postPage?id=${postID}`;\n    } catch (error) {\n        console.error('Error:', error);\n    }\n}\n\n// Add event listener to submit button\nif (submitPost) {\n    submitPost.addEventListener(\"click\", createNewPost);\n}\n\n// Initial fetch of blog posts\nfetchBlogPosts();\n\n\n//# sourceURL=webpack:///./src/pages/postList/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/pages/login/index.css\");\n\n\ndocument.getElementById('loginForm').addEventListener('submit', function (e) {\n  e.preventDefault(); // Prevent the default form submission\n\n  // Get the values from the input fields\n  const email = document.getElementById('email').value;\n  const password = document.getElementById('password').value;\n\n  // Send a POST request to the API\n  fetch('https://node-api-atjf.onrender.com/auth', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      email: email,\n      password: password,\n    }),\n  })\n  .then((response) => {\n    if (!response.ok) {\n      throw new Error('Network response was not ok ' + response.statusText);\n    }\n    return response.json();\n  })\n  .then((data) => {\n    // Store the token in localStorage or sessionStorage\n    if (data.token) {\n      localStorage.setItem('authToken', data.token);\n      console.log('Token saved to localStorage');\n    }\n    // Redirect to the dashboard\n    window.location.href = '../dashboard';\n  })\n  .catch((error) => {\n    console.error('Error:', error); // Handle any errors\n  });\n});\n\n\n//# sourceURL=webpack:///./src/pages/login/index.js?");
 
 /***/ })
 
@@ -449,12 +438,12 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
 /******/ 	
 /******/ 	/* webpack/runtime/get update manifest filename */
 /******/ 	(() => {
-/******/ 		__webpack_require__.hmrF = () => ("postList." + __webpack_require__.h() + ".hot-update.json");
+/******/ 		__webpack_require__.hmrF = () => ("login." + __webpack_require__.h() + ".hot-update.json");
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("f2c466b7a104e547")
+/******/ 		__webpack_require__.h = () => ("12936bac570be0c5")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -1054,7 +1043,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = __webpack_require__.hmrS_jsonp = __webpack_require__.hmrS_jsonp || {
-/******/ 			"postList": 0
+/******/ 			"login": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -1565,7 +1554,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=0.0.0.0&port=8080&pathname=%2Fws&logging=info&overlay=%7B%22errors%22%3Atrue%2C%22warnings%22%3Atrue%2C%22runtimeErrors%22%3A%22%28error%29%2520%253D%253E%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%2520%28error.message%2520%253D%253D%253D%2520%27ResizeObserver%2520loop%2520limit%2520exceeded%27%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520return%2520false%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520return%2520false%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%22%7D&reconnect=10&hot=true&live-reload=true");
 /******/ 	__webpack_require__("./node_modules/webpack/hot/dev-server.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/postList/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/login/index.js");
 /******/ 	
 /******/ })()
 ;
